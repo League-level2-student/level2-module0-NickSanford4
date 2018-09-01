@@ -7,6 +7,7 @@ public class _00_ArrayCheatSheet {
 		// 1. make an array of 5 Strings
 		String[] a = { "qh", "wk", "h", "k", "z" };
 		int small = 50;
+		int large = 0;
 		// 2. print the third element in the array
 		System.out.println(a[2]);
 		// 3. set the third element to a different value
@@ -21,7 +22,6 @@ public class _00_ArrayCheatSheet {
 		// 6. make an array of 50 integers
 		int[] u = new int[50];
 		// 7. use a for loop to make every value of the integer array a random number
-		int r = 0;
 		Random numb = new Random();
 		for (int i = 0; i < u.length; i++) {
 
@@ -36,11 +36,18 @@ public class _00_ArrayCheatSheet {
 				small = u[i];
 			}
 		}
+		//largest numb:
+		for (int i = 0; i < u.length; i++) {
+			if (u[i] > large) {
+				large = u[i];
+			}
+		}
 		System.out.println("smallest = " + small);
 		// 9 print the entire array to see if step 8 was correct
 		for (int i = 0; i < u.length; i++) {
 			System.out.println(u[i]);
 		}
 		// 10. print the largest number in the array.
+		System.out.println("biggest = " + large);
 	}
 }
