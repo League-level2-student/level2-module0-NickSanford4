@@ -10,7 +10,7 @@ public class _01_RobotRace {
 	public static void main(String[] args) {
 		Random rand = new Random();
 		//2. create an array of 5 robots.
-		int  number_Robost=99999999;
+		int  number_Robost=2;
 		Robot[]rob = new Robot[number_Robost];
 		int[] dist = new int[number_Robost];
 		//3. use a for loop to initialize the robots.
@@ -33,7 +33,7 @@ public class _01_RobotRace {
 				  rob[i].move(4);
 				  rob[i].turn(1);
 				  //rob[i].penDown();
-				  rob[i].setSpeed(1);
+				  rob[i].setSpeed(10);
 				}
 		  }
        }
