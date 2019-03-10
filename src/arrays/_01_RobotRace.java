@@ -24,31 +24,32 @@ public class _01_RobotRace {
 		rob[i].penDown();
 		}
 
-		
-		for(int j=0;j<15;j++) {
+		int winner=-1;
+		while(winner==-1) {
 		   for (int i = 0; i < rob.length; i++) {
 		    	   int t=rand.nextInt(100);
-		    	   dist[i]+=t;
+		    	  
 			   for(int k=0;k<t;k++) {
 				  rob[i].move(4);
 				  rob[i].turn(1);
 				  //rob[i].penDown();
 				  rob[i].setSpeed(10);
+				  dist[i]+=1;
+				  System.out.println(dist[i]);
+				  if(dist[i]>360) {
+					  winner = i;
+					  break;
+				  }
 				}
+			   if(winner!=-1) {
+				   break;
+			   }
 		  }
        }
-	   int dist_max=0;	
-	   int winner=-1;
-	   for (int i = 0; i < rob.length; i++) {
-          if(dist[i] > dist_max )   {
-        	     dist_max=dist[i];
-        	     winner=i;
-          }
-	   }
 		//7. declare that robot the winner and throw it a party!
     	
     		rob[winner].sparkle();
-    		JOptionPane.showMessageDialog(null,"winner="+(winner+1));
+    		JOptionPane.showMessageDialog(null,"winner = robot "+(winner+1));
     			
     	
 		//8. try different races with different amounts of robots.
